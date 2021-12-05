@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  api:
+    container_name: backend
+    build:
+      dockerfile: ./Dockerfile
+      context: ./server
+    ports:
+      - 8080:8080/tcp
+  app:
+    container_name: frontend
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    ports:
+      - 3000:3000
